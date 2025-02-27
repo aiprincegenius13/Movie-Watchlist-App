@@ -1,14 +1,14 @@
 import React, { useState, useContext } from 'react';
 import { MovieContext } from '../contexts/MovieContext';
 
-const ReviewForm = () => {
+const ReviewForm = ({ movieId }) => {
   const [review, setReview] = useState('');
   const { dispatch } = useContext(MovieContext);
 
   const handleSubmit = (e) => {
     e.preventDefault();
     if (!review) return;
-    dispatch({ type: 'ADD_REVIEW', payload: review });
+    dispatch({ type: 'ADD_REVIEW', payload: { movieId, review } });
     setReview('');
   };
 
