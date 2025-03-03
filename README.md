@@ -11,11 +11,10 @@
 - A link to your live site.
 - Usage instructions, if relevant.
 - Unsolved problems.
-etc.
-- Use AJAX to make a request to an external data source like OMDBapi, and insert some of the data retrieved into the DOM.
+etc..
 - Due March 4th by 7am
 
-# Movie Review and WastchList APplication
+# Anime Review and WastchList APplication
 ## Rechnoglogies Used
 - HTML and CSS styling
 - React
@@ -27,10 +26,11 @@ etc.
 
 
 ## Explanation of Approach
-- Creating a carousel that can scroll throough all movies, filtered by a button by genre
-- WHen mobie is clicked, the movie desciption and relevant information is populated in a drop down
-- Movies that a user wants to watched are saved in the watchlist
-- functionality to show watched movies once checked in the watchlist
+- Creating a carousel that scrolls through images andtitles of anime
+- Search by genre
+- search by ranking
+- Search by ID
+-Create a click function to add to watchlist, watchlist will be itts own page, can delete things that are watched by clicking the watched button which automatically deletes anime.
 
 
 

@@ -1,11 +1,11 @@
 import React from 'react';
-import ReactDOM from 'react-dom/client';
+import ReactDOM from 'react-dom';
 import App from './App';
-import { MovieProvider } from './Components/contexts/MovieContext';
+import './App.css';
 
-// const root = ReactDOM.createRoot(document.getElementById('root'));
-// root.render(
-//   <MovieProvider>
-//     <App />
-//   </MovieProvider>
-// );
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById('root')
+);

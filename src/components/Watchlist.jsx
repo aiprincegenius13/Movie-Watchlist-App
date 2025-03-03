@@ -1,26 +1,29 @@
-// Watchlist.js
-import React, { useContext } from 'react';
-import { MovieContext } from '../context/MovieContext';
+import React from 'react';
+import { useWatchlist } from '.../contexts/WatchlistContext';
 
 const Watchlist = () => {
-  const { state, dispatch } = useContext(MovieContext);
+  const { state, dispatch } = useWatchlist();
 
-  const removeFromWatchlist = (id) => {
+  const handleRemove = (id) => {
     dispatch({ type: 'REMOVE_FROM_WATCHLIST', payload: id });
   };
 
   return (
     <div className="watchlist">
-      <h1>Your Watchlist</h1>
+      <h2>Your Watchlist</h2>
       {state.watchlist.length === 0 ? (
-        <p>No movies added yet!</p>
+        <p>No anime in your watchlist. Add some from the Anime List!</p>
       ) : (
-        state.watchlist.map(movie => (
-          <div key={movie.imdbID} className="watchlist-item">
-            <h3>{movie.Title}</h3>
-            <button onClick={() => removeFromWatchlist(movie.imdbID)}>Remove</button>
-          </div>
-        ))
+        <ul>
+          {state.watchlist.map(anime => (
+            <li key={anime.id}>
+              <h3>{anime.title}</h3>
+              <button onClick={() => handleRemove(anime.id)}>
+                Mark as Watched (Remove)
+              </button>
+            </li>
+          ))}
+        </ul>
       )}
     </div>
   );
